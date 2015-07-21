@@ -23,6 +23,7 @@ IUSE=""
 
 DEPEND="
 	dev-qt/qtcore:5
+	dev-qt/qtopengl:5
 	virtual/opengl
 	"
 
@@ -43,7 +44,7 @@ src_install() {
 	insinto $INST_DIR
 	doins -r Bin/*
 	exeinto $INST_DIR
-	doexe AwesomeBump
+	doexe Build/Bin/AwesomeBump
 	dobin ${FILESDIR}/AwesomeBump.sh
 	newicon Sources/resources/logo.png "${PN}".png || die
 	make_desktop_entry AwesomeBump.sh
